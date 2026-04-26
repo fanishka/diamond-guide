@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Forever Guide — Everything You Need to Find Your Ring with Confidence</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --t:#0ABAB5;--td:#089490;--tp:#E8F8F7;--tm:#B2E4E2;
+  --ivory:#FDFCF9;--warm:#F7F3EC;
+  --champagne:#F5EFE4;--stone:#EDE7DC;--blush:#F3ECE6;--slate:#2C2723;--slate-mid:#3D3730;
+  --ink:#161412;--mid:#3D3530;--light:#6B6360;
+  --border:#E8E2D9;--rule:rgba(28,25,23,0.08);
+  --gold:#C9A96E;--goldp:#F5EDD9;
+  --r:8px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--ivory);color:var(--ink);font-family:'Raleway',sans-serif;font-weight:300;font-size:18px;line-height:1.9;-webkit-font-smoothing:antialiased;min-height:100vh}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(253,252,249,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0.9rem 2.5rem;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--t)}
+.nav-steps{display:flex;align-items:center;gap:0;flex:1;justify-content:center;max-width:600px;margin:0 auto}
+.nav-step{display:flex;align-items:center;gap:0}
+.ns-dot{width:8px;height:8px;border-radius:50%;background:var(--border);transition:background 0.4s,transform 0.3s;cursor:pointer}
+.ns-dot.active{background:var(--t);transform:scale(1.35)}
+.ns-dot.done{background:var(--tm)}
+.ns-line{width:24px;height:1px;background:var(--border);transition:background 0.4s}
+.ns-line.done{background:var(--tm)}
+.nav-cta{font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--light)}
+
+/* SCREENS */
+.screen{display:none;min-height:100vh;padding-top:64px}
+.screen.active{display:block}
+
+/* SHARED LAYOUT */
+.s-inner{max-width:860px;margin:0 auto;padding:4rem 2.5rem 6rem}
+.s-inner.narrow{max-width:640px}
+.s-inner.wide{max-width:1000px}
+
+/* EYEBROW */
+.eyebrow{font-size:10px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:var(--t);margin-bottom:0.9rem}
+.step-label{font-size:10px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--light);margin-bottom:0.5rem}
+
+/* HEADINGS */
+h1.display{font-family:'Cormorant',serif;font-size:clamp(3rem,7vw,5.5rem);font-weight:300;line-height:1.05;letter-spacing:-0.01em}
+h1.display i{color:var(--t);font-style:italic}
+h2.section-h{font-family:'Cormorant',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;line-height:1.1;margin-bottom:1rem}
+h2.section-h i{color:var(--t);font-style:italic}
+h3.card-h{font-family:'Cormorant',serif;font-size:1.3rem;font-weight:400;color:var(--ink);margin-bottom:0.3rem}
+.body-text{color:var(--mid);font-size:17px;line-height:1.9;font-weight:300}
+.body-text p+p{margin-top:0.9rem}
+
+/* PULL */
+.pull{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:var(--ink);border-left:3px solid var(--t);padding:1rem 1.5rem;margin:2rem 0;line-height:1.6;background:var(--tp);border-radius:0 var(--r) var(--r) 0}
+
+/* ORNAMENT RULE */
+.orn{display:flex;align-items:center;gap:1rem;margin:2.5rem 0}
+.orn::before,.orn::after{content:'';flex:1;height:1px;background:var(--border)}
+.orn-d{width:6px;height:6px;background:var(--t);transform:rotate(45deg);flex-shrink:0}
+
+/* HERO SCREEN */
+#s0{background:var(--ivory)}
+.hero-wrap{display:grid;grid-template-columns:1.1fr 0.9fr;gap:0;min-height:70vh;max-height:780px}
+.hero-left{padding:5rem 3rem 4rem;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--border)}
+.hero-right{position:relative;overflow:hidden;background:var(--stone)}
+.hero-right img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;filter:saturate(0.82)}
+.hero-right-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,186,181,0.08),transparent)}
+.hero-meta{display:flex;flex-wrap:wrap;gap:0.5rem 1.5rem;margin:2rem 0;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--light)}
+.hero-meta span::before{content:'';display:inline-block;width:4px;height:4px;background:var(--t);border-radius:50%;margin-right:0.5rem;vertical-align:middle}
+.btn-primary{display:inline-flex;align-items:center;gap:0.75rem;background:var(--t);color:#fff;border:none;padding:1.1rem 2.5rem;font-family:'Raleway',sans-serif;font-size:14px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:background 0.2s,transform 0.15s,box-shadow 0.2s}
+.btn-primary:hover{background:var(--td);transform:translateY(-2px);box-shadow:0 8px 24px rgba(10,186,181,0.25)}
+.btn-secondary{display:inline-flex;align-items:center;gap:0.5rem;background:transparent;color:var(--ink);border:1px solid var(--border);padding:0.9rem 1.75rem;font-family:'Raleway',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:border-color 0.2s,color 0.2s}
+.btn-secondary:hover{border-color:var(--t);color:var(--t)}
+.btn-ghost{background:none;border:none;font-family:'Raleway',sans-serif;font-size:12px;font-weight:400;color:var(--light);cursor:pointer;letter-spacing:0.08em;padding:0.5rem 0;text-decoration:underline;text-underline-offset:3px}
+.btn-ghost:hover{color:var(--mid)}
+
+/* EDUCATION SCREENS */
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin:2rem 0;border-radius:var(--r);overflow:hidden}
+.edu-cell{background:var(--ivory);padding:1.5rem;font-size:16px;line-height:1.85;color:var(--mid)}
+.edu-cell:nth-child(even){background:var(--blush)}
+.edu-cell strong{display:block;font-family:'Cormorant',serif;font-size:1.05rem;font-weight:500;color:var(--ink);margin-bottom:6px}
+.edu-img{width:100%;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin:1.5rem 0}
+.edu-img img{width:100%;height:260px;object-fit:cover;display:block}
+.edu-img-cap{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--light);padding:0.6rem 1rem;background:var(--stone);border-top:1px solid var(--border)}
+.compare-row{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin:1.5rem 0}
+.compare-cell{background:var(--ivory);padding:1.5rem}
+.compare-cell:nth-child(even){background:var(--blush)}
+.compare-cell .cc-era{font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--t);margin-bottom:0.5rem}
+.compare-cell img{width:100%;height:200px;object-fit:cover;display:block;border-radius:4px;margin-bottom:1rem}
+.compare-cell p{font-size:15px;color:var(--mid);line-height:1.8}
+
+/* TIMELINE */
+.timeline{margin:2rem 0}
+.tl-item{display:flex;gap:2rem;padding:1.75rem 0;border-bottom:1px solid var(--rule);align-items:flex-start}
+.tl-item:last-child{border-bottom:none}
+.tl-year{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:3rem;color:var(--t);min-width:100px;line-height:1;padding-top:4px;font-weight:300}
+.tl-content{font-size:17px;color:var(--mid);line-height:1.9;padding-top:0.5rem}
+.tl-content strong{color:var(--ink);font-weight:500}
+
+/* 4Cs VISUAL */
+.fourccs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:2rem 0}
+.fc-card{background:var(--blush);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem 1rem;text-align:center}
+.fc-icon{width:44px;height:44px;margin:0 auto 0.75rem;display:flex;align-items:center;justify-content:center}
+.fc-label{font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--t);margin-bottom:4px}
+.fc-name{font-family:'Cormorant',serif;font-size:1.1rem;font-weight:400;color:var(--ink);margin-bottom:6px}
+.fc-desc{font-size:14px;color:var(--mid);line-height:1.7}
+
+/* CHOICE SCREENS */
+.choice-header{text-align:center;margin-bottom:3rem}
+.choice-grid{display:grid;gap:16px;margin:2rem 0}
+.choice-grid.cols-2{grid-template-columns:1fr 1fr}
+.choice-grid.cols-3{grid-template-columns:1fr 1fr 1fr}
+.choice-grid.cols-4{grid-template-columns:1fr 1fr 1fr 1fr}
+
+.choice-card{
+  border:1.5px solid var(--border);
+  border-radius:var(--r);
+  padding:1.5rem;
+  cursor:pointer;
+  transition:border-color 0.2s,background 0.2s,transform 0.15s;
+  position:relative;
+  background:var(--ivory);
+}
+.choice-card:hover{border-color:var(--tm);transform:translateY(-2px)}
+.choice-card.selected{border-color:var(--t);background:var(--tp)}
+.choice-card.selected::after{content:'';position:absolute;top:12px;right:12px;width:18px;height:18px;border-radius:50%;background:var(--t);background-image:url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3.5L3.8 6.5L9 1' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
+.card-tag{font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--t);margin-bottom:0.4rem}
+.card-title{font-family:'Cormorant',serif;font-size:1.25rem;font-weight:400;color:var(--ink);margin-bottom:0.4rem}
+.card-sub{font-size:15px;color:var(--mid);line-height:1.75}
+.card-badge{display:inline-block;background:var(--goldp);color:#7A5C1E;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:2px 8px;border-radius:20px;margin-top:0.5rem}
+.card-img{width:100%;height:160px;object-fit:cover;border-radius:4px;margin-bottom:1rem;display:block}
+
+/* SHAPE SVG CARDS */
+.shape-card{border:1.5px solid var(--border);border-radius:var(--r);padding:1.25rem 0.75rem;cursor:pointer;transition:border-color 0.2s,background 0.2s,transform 0.15s;text-align:center;background:var(--ivory);position:relative}
+.shape-card:hover{border-color:var(--tm);transform:translateY(-2px)}
+.shape-card.selected{border-color:var(--t);background:var(--tp)}
+.shape-card.selected::after{content:'';position:absolute;top:8px;right:8px;width:16px;height:16px;border-radius:50%;background:var(--t);background-image:url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3.5L3.8 6.5L9 1' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
+.shape-card svg{display:block;margin:0 auto 8px}
+.shape-name{font-family:'Cormorant',serif;font-size:0.95rem;font-weight:400;color:var(--ink);display:block;margin-bottom:2px}
+.shape-rec{font-size:10px;color:var(--t);font-weight:500;letter-spacing:0.06em}
+.shape-note{font-size:13px;color:var(--mid);line-height:1.6}
+
+/* BUDGET SLIDER */
+.budget-wrap{margin:2rem 0}
+.budget-display{font-family:'Cormorant',serif;font-size:3rem;font-weight:300;color:var(--ink);text-align:center;margin-bottom:0.5rem}
+.budget-sub{text-align:center;font-size:13px;color:var(--mid);margin-bottom:2rem}
+input[type=range]{width:100%;accent-color:var(--t);height:4px;cursor:pointer}
+.budget-ticks{display:flex;justify-content:space-between;font-size:11px;color:var(--light);margin-top:0.5rem;letter-spacing:0.04em}
+.budget-insight{background:var(--tp);border:1px solid var(--tm);border-radius:var(--r);padding:1.25rem 1.5rem;margin-top:2rem;font-size:14px;color:#0D5553;line-height:1.75}
+.budget-insight strong{color:#085553}
+
+/* NAV BUTTONS */
+.nav-buttons{display:flex;align-items:center;justify-content:space-between;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
+.nav-buttons-center{justify-content:center}
+
+/* RESULT SCREEN */
+#s-result{background:var(--ivory)}
+.result-hero{text-align:center;padding:4rem 2.5rem 3rem;border-bottom:1px solid var(--border);max-width:860px;margin:0 auto}
+.result-ring-display{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:860px;margin:0 auto;border-bottom:1px solid var(--border)}
+.result-img{overflow:hidden;background:var(--stone)}
+.result-img img{width:100%;height:420px;object-fit:cover;display:block}
+.result-spec{padding:3rem;display:flex;flex-direction:column;justify-content:center;border-left:1px solid var(--border);background:var(--champagne)}
+.result-spec-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--t);margin-bottom:1.5rem}
+.spec-row{display:flex;gap:1.25rem;padding:0.8rem 0;border-bottom:1px solid var(--rule)}
+.spec-row:last-child{border-bottom:none}
+.spec-label{font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--light);min-width:80px;flex-shrink:0;padding-top:2px}
+.spec-val{font-size:16px;color:var(--ink);font-weight:400;line-height:1.65}
+.spec-val .sv-main{font-family:'Cormorant',serif;font-size:1rem;font-weight:400}
+.result-sections{max-width:860px;margin:0 auto}
+.result-section{padding:3rem 2.5rem;border-bottom:1px solid var(--border)}
+.result-section h3{font-family:'Cormorant',serif;font-size:1.4rem;font-weight:400;color:var(--ink);margin-bottom:1rem}
+.result-recs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:1.5rem}
+.rec-card{background:var(--stone);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem}
+.rec-card .rc-label{font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--t);margin-bottom:4px}
+.rec-card .rc-name{font-family:'Cormorant',serif;font-size:1rem;font-weight:400;color:var(--ink);margin-bottom:4px}
+.rec-card .rc-note{font-size:14px;color:var(--mid);line-height:1.7}
+.disclaimer{background:var(--champagne);border-top:1px solid var(--border);padding:2rem 2.5rem;max-width:860px;margin:0 auto;font-size:12px;color:var(--light);line-height:1.8;text-align:center}
+
+/* TIP */
+.tip{display:flex;gap:1rem;background:var(--tp);border-left:3px solid var(--t);padding:1.1rem 1.4rem;margin:1.5rem 0;font-size:15px;color:#0D5553;line-height:1.75;border-radius:0 4px 4px 0}
+.tip-icon{flex-shrink:0;margin-top:5px;width:12px;height:12px;background:var(--t);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+
+/* PROGRESS BAR */
+.progress-strip{height:3px;background:var(--border);position:fixed;top:64px;left:0;right:0;z-index:299}
+.progress-fill{height:100%;background:var(--t);transition:width 0.5s ease;width:0%}
+
+/* FOOTER */
+footer{max-width:860px;margin:0 auto;padding:2.5rem;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border)}
+.foot-brand{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--t);font-size:1rem}
+.foot-note{font-size:11px;color:var(--light);text-align:right;line-height:1.7}
+
+/* ANIMATIONS */
+.fade-in{animation:fadeIn 0.5s ease forwards}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:680px){
+  .hero-wrap{grid-template-columns:1fr}
+  .hero-right{height:240px}
+  .edu-grid{grid-template-columns:1fr}
+  .fourccs{grid-template-columns:1fr 1fr}
+  .choice-grid.cols-3,.choice-grid.cols-4{grid-template-columns:1fr 1fr}
+  .compare-row{grid-template-columns:1fr}
+  .result-ring-display{grid-template-columns:1fr}
+  .result-recs{grid-template-columns:1fr}
+  nav{padding:0.9rem 1.25rem}
+  .nav-steps{display:none}
+  .s-inner{padding:2.5rem 1.25rem 4rem}
+  div[style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:1fr 1fr!important}
+  div[style*="grid-template-columns:1fr 1fr 1fr"]{grid-template-columns:1fr!important}
+}
+
+@media print {
+  nav, .progress-strip, .btn-primary, .btn-secondary, .btn-ghost,
+  #s0,#s1,#s2,#s2a,#s2b,#s2c,#s2d,#s3,#s4,#s4b,#s5,#s6,#s7,#s8 { display:none!important; }
+  #s9 { display:block!important; padding-top:0!important; }
+  body { background:#fff!important; font-size:13px!important; }
+  #specCard { border:1px solid #ccc!important; }
+  #specCard > div:first-child { background:#1C1917!important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .screen { min-height:auto!important; }
+  div[style*="background:var(--slate)"] { background:#1C1917!important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">The Forever Guide</div>
+  <div class="nav-steps" id="navSteps"></div>
+  <div class="nav-cta" id="navCta">2026 Edition</div>
+</nav>
+<div class="progress-strip"><div class="progress-fill" id="progressFill"></div></div>
+
+<!-- S0: WELCOME -->
+<div class="screen active" id="s0">
+
+  <!-- HERO SPLIT -->
+  <div class="hero-wrap">
+    <div class="hero-left fade-in">
+      <div class="eyebrow">The Complete Ring Guide &nbsp;&middot;&nbsp; 2026 Edition</div>
+      <h1 class="display">The <i>Forever</i><br>Guide.</h1>
+      <p style="color:var(--mid);font-size:16px;margin:1.5rem 0 0;max-width:440px;line-height:2">A diamond is forever. The search for the right one should feel just as extraordinary. This is your guide to beginning that journey with intention, knowledge, and complete confidence.</p>
+      <div style="margin-top:2.5rem">
+        <div style="font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--light);margin-bottom:0.9rem">Ready to begin?</div>
+        <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+          <button class="btn-primary" onclick="goTo(1)" style="font-size:15px;padding:1.2rem 2.75rem;letter-spacing:0.14em">Begin the journey &nbsp;&#8594;</button>
+          <button class="btn-ghost" onclick="goTo(10)">Already know the basics</button>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=900&q=85" alt="Diamond solitaire engagement ring">
+      <div class="hero-right-overlay"></div>
+    </div>
+  </div>
+
+  <!-- INTRO NARRATIVE -->
+  <div style="max-width:720px;margin:0 auto;padding:5rem 2.5rem 3rem;text-align:center">
+    <div class="eyebrow">For the couple beginning their forever</div>
+    <h2 style="font-family:'Cormorant',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:300;line-height:1.2;margin-bottom:1.5rem;color:var(--ink)">The person is chosen.<br>The ring deserves the same <i>certainty.</i></h2>
+    <p style="color:var(--mid);font-size:16px;line-height:2;max-width:580px;margin:0 auto">Most couples walk into a jeweler uninformed and leave overwhelmed. That is not a good start to forever. This guide was built for couples who refuse to leave something this important to chance. Eight chapters. Every question answered. A ring specification built around your preferences, your hand, and your budget. By the end, you will not need to ask the jeweler what to think. You will already know.</p>
+  </div>
+
+  <!-- WHAT YOU WILL LEARN -->
+  <div style="background:var(--champagne);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:4rem 2.5rem">
+    <div style="max-width:860px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="eyebrow">The journey</div>
+        <h3 style="font-family:'Cormorant',serif;font-size:2rem;font-weight:300;color:var(--ink)">Eight chapters. Total confidence. <i>One ring.</i></h3>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:2px;overflow:hidden;margin-top:2.5rem">
+        <div style="background:var(--stone);padding:2rem 1.5rem">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:2.5rem;color:var(--gold);line-height:1;margin-bottom:0.9rem">01</div>
+          <div style="font-family:'Cormorant',serif;font-size:1.25rem;font-weight:400;color:var(--ink);margin-bottom:0.6rem">History</div>
+          <div style="font-size:14px;color:var(--mid);line-height:1.75">From ancient Rome to De Beers to the lab diamond revolution of today.</div>
+        </div>
+        <div style="background:var(--stone);padding:2rem 1.5rem">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:2.5rem;color:var(--gold);line-height:1;margin-bottom:0.9rem">02</div>
+          <div style="font-family:'Cormorant',serif;font-size:1.25rem;font-weight:400;color:var(--ink);margin-bottom:0.6rem">The 4Cs</div>
+          <div style="font-size:14px;color:var(--mid);line-height:1.75">Cut, Color, Clarity, Carat. The four things that define every diamond ever graded.</div>
+        </div>
+        <div style="background:var(--stone);padding:2rem 1.5rem">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:2.5rem;color:var(--gold);line-height:1;margin-bottom:0.9rem">03</div>
+          <div style="font-family:'Cormorant',serif;font-size:1.25rem;font-weight:400;color:var(--ink);margin-bottom:0.6rem">Lab vs mined</div>
+          <div style="font-size:14px;color:var(--mid);line-height:1.75">The real differences, the real price gap, and how to decide for yourself.</div>
+        </div>
+        <div style="background:var(--stone);padding:2rem 1.5rem">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:2.5rem;color:var(--gold);line-height:1;margin-bottom:0.9rem">04</div>
+          <div style="font-family:'Cormorant',serif;font-size:1.25rem;font-weight:400;color:var(--ink);margin-bottom:0.6rem">Beyond diamonds</div>
+          <div style="font-size:14px;color:var(--mid);line-height:1.75">Sapphires, moissanite, rubies. What works for daily wear and what does not.</div>
+        </div>
+        <div style="background:var(--stone);padding:2rem 1.5rem">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:2.5rem;color:var(--gold);line-height:1;margin-bottom:0.9rem">05</div>
+          <div style="font-family:'Cormorant',serif;font-size:1.25rem;font-weight:400;color:var(--ink);margin-bottom:0.6rem">Choose your stone</div>
+          <div style="font-size:14px;color:var(--mid);line-height:1.75">Your first real decision. Lab, mined, sapphire, or moissanite?</div>
+        </div>
+        <div style="background:var(--stone);padding:2rem 1.5rem">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:2.5rem;color:var(--gold);line-height:1;margin-bottom:0.9rem">06</div>
+          <div style="font-family:'Cormorant',serif;font-size:1.25rem;font-weight:400;color:var(--ink);margin-bottom:0.6rem">Choose your shape</div>
+          <div style="font-size:14px;color:var(--mid);line-height:1.75">Round, oval, cushion, emerald. What flatters the hand and what reads largest.</div>
+        </div>
+        <div style="background:var(--stone);padding:2rem 1.5rem">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:2.5rem;color:var(--gold);line-height:1;margin-bottom:0.9rem">07</div>
+          <div style="font-family:'Cormorant',serif;font-size:1.25rem;font-weight:400;color:var(--ink);margin-bottom:0.6rem">Setting and metal</div>
+          <div style="font-size:14px;color:var(--mid);line-height:1.75">Solitaire or pavé, platinum or rose gold. What holds the stone and how.</div>
+        </div>
+        <div style="background:var(--stone);padding:2rem 1.5rem">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:2.5rem;color:var(--gold);line-height:1;margin-bottom:0.9rem">08</div>
+          <div style="font-family:'Cormorant',serif;font-size:1.25rem;font-weight:400;color:var(--ink);margin-bottom:0.6rem">Your ring</div>
+          <div style="font-size:14px;color:var(--mid);line-height:1.75">A personalized specification built entirely from your choices. Ready to take to any jeweler.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAST FACTS -->
+  <div style="max-width:860px;margin:0 auto;padding:4rem 2.5rem">
+    <div style="text-align:center;margin-bottom:3rem">
+      <div class="eyebrow">Before you begin</div>
+      <h3 style="font-family:'Cormorant',serif;font-size:2rem;font-weight:300;color:var(--ink)">Three things the industry would rather you did not know</h3>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px">
+      <div style="border:1px solid var(--border);border-radius:2px;padding:1.5rem;background:var(--blush)">
+        <div style="font-family:'Cormorant',serif;font-size:2.5rem;font-weight:300;color:var(--t);line-height:1;margin-bottom:0.75rem">60%</div>
+        <div style="font-family:'Cormorant',serif;font-size:1rem;font-weight:400;color:var(--ink);margin-bottom:0.4rem">Cheaper, same stone</div>
+        <div style="font-size:13px;color:var(--mid);line-height:1.7">A lab diamond is 60 to 80 percent cheaper than its mined equivalent. Identical carbon. Identical sparkle. Identical certificate. The premium you are skipping is geological scarcity, not beauty.</div>
+      </div>
+      <div style="border:1px solid var(--border);border-radius:2px;padding:1.5rem;background:var(--blush)">
+        <div style="font-family:'Cormorant',serif;font-size:2.5rem;font-weight:300;color:var(--t);line-height:1;margin-bottom:0.75rem">1947</div>
+        <div style="font-family:'Cormorant',serif;font-size:1rem;font-weight:400;color:var(--ink);margin-bottom:0.4rem">The two-month rule</div>
+        <div style="font-size:13px;color:var(--mid);line-height:1.7">Invented in 1947 by a De Beers advertising agency. It has no basis in tradition, culture, or logic. Spend what reflects your values, not a copywriter's brief.</div>
+      </div>
+      <div style="border:1px solid var(--border);border-radius:2px;padding:1.5rem;background:var(--blush)">
+        <div style="font-family:'Cormorant',serif;font-size:2.5rem;font-weight:300;color:var(--t);line-height:1;margin-bottom:0.75rem">Cut</div>
+        <div style="font-family:'Cormorant',serif;font-size:1rem;font-weight:400;color:var(--ink);margin-bottom:0.4rem">The only thing that matters most</div>
+        <div style="font-size:13px;color:var(--mid);line-height:1.7">A perfectly cut G color stone outsparkles a poorly cut D color stone without exception. The certificate grade is irrelevant if the facets are wrong. Cut is everything.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINAL CTA -->
+  <div style="border-top:1px solid var(--border);background:var(--slate);padding:7rem 2.5rem;text-align:center;position:relative;overflow:hidden">
+    <div style="display:flex;align-items:center;justify-content:center;gap:1.25rem;margin-bottom:2rem">
+      <div style="width:40px;height:1px;background:rgba(178,228,226,0.4)"></div>
+      <div style="width:8px;height:8px;background:var(--t);transform:rotate(45deg)"></div>
+      <div style="width:40px;height:1px;background:rgba(178,228,226,0.4)"></div>
+    </div>
+    <div class="eyebrow" style="margin-bottom:1.25rem;color:var(--tm);font-size:11px">The journey to forever begins here</div>
+    <h3 style="font-family:'Cormorant',serif;font-size:clamp(2.8rem,6vw,4.5rem);font-weight:300;color:#F9F6F0;margin-bottom:1.5rem;line-height:1.1;letter-spacing:-0.01em">Learn everything.<br>Decide <i>confidently.</i><br>Walk in like a pro.</h3>
+    <p style="color:rgba(249,246,240,0.72);font-size:17px;max-width:520px;margin:0 auto 3rem;line-height:1.9">Thirty minutes. Eight chapters. Every answer you need. Leave with a ring specification built entirely around your preferences, your hand, and your budget. No overwhelm. No guesswork. Just the clarity that a decision this significant deserves.</p>
+    <div style="display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap">
+      <button class="btn-primary" onclick="goTo(1)">Start the journey &nbsp;&#8594;</button>
+      <button class="btn-secondary" onclick="goTo(10)" style="border-color:rgba(249,246,240,0.25);color:#F9F6F0">I know the basics, take me to preferences</button>
+    </div>
+    <p style="font-size:11px;color:rgba(249,246,240,0.35);margin-top:1.5rem;letter-spacing:0.08em">Prices and market data current as of 2026</p>
+  </div>
+
+</div>
+
+<!-- S1: HISTORY -->
+<div class="screen" id="s1">
+  <div class="s-inner narrow">
+    <div class="step-label">Chapter 1 of 8</div>
+    <h2 class="section-h">A brief <i>history</i> of the ring</h2>
+    <div class="body-text">
+      <p>The engagement ring has roots far older than the diamond industry would have you believe. The tradition begins in ancient Rome, where a simple iron band was placed on the third finger of the left hand. Romans believed a vein ran directly from that finger to the heart: the <em>vena amoris</em>.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">1477</div>
+        <div class="tl-content"><strong>The first diamond ring.</strong> Archduke Maximilian of Austria gives Mary of Burgundy a diamond ring. For the next four centuries, diamonds remain the exclusive province of royalty.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1837</div>
+        <div class="tl-content"><strong>Victorian era.</strong> Industrialization brings gemstones within reach of the middle class. Rings become elaborately sentimental: floral motifs, enamel, and hidden messages spelled in gemstones called acrostic rings.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1901</div>
+        <div class="tl-content"><strong>Edwardian period.</strong> Platinum enters jewelry. Delicate filigree and lacework settings become the signature of the era. Settings become architectural feats.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1920</div>
+        <div class="tl-content"><strong>Art Deco.</strong> Geometric boldness inspired by Cubism and the machine age. Rings become angular and graphic. The emerald cut finds its natural home here.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1947</div>
+        <div class="tl-content"><strong>A Diamond Is Forever.</strong> De Beers launches one of history's most effective ad campaigns, tying diamonds to eternal love and embedding the two-months-salary convention. Within a decade, the diamond engagement ring shifts from luxury to expectation.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2016</div>
+        <div class="tl-content"><strong>Lab diamonds go mainstream.</strong> Advances in CVD technology make lab-grown diamonds commercially viable at scale. Prices begin falling. The market begins to shift.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2026</div>
+        <div class="tl-content"><strong>The new landscape.</strong> Lab diamonds now account for over 40 percent of engagement ring sales. A 2ct lab diamond costs what a 0.75ct mined stone cost five years ago. The choice is now genuinely open.</div>
+      </div>
+    </div>
+
+    <div class="compare-row">
+      <div class="compare-cell">
+        <div class="cc-era">Art Deco, 1920s</div>
+        <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500&q=80" alt="Vintage Art Deco ring">
+        <p>Geometric platinum filigree, old European cut diamonds. Handcrafted detail that modern machines rarely replicate.</p>
+      </div>
+      <div class="compare-cell">
+        <div class="cc-era">Contemporary, 2026</div>
+        <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=500&q=80" alt="Modern oval engagement ring">
+        <p>Elongated oval, thin pavé band, clean profile. Designed to photograph beautifully and wear effortlessly every day.</p>
+      </div>
+    </div>
+
+    <div class="pull">"The two-months-salary rule was invented by an advertising agency in 1947. It is a marketing construct, not a tradition."</div>
+
+    <div class="nav-buttons">
+      <button class="btn-secondary" onclick="goTo(0)">&#8592; Back</button>
+      <button class="btn-primary" onclick="goTo(2)">Next: The 4Cs &nbsp;&#8594;</button>
+    </div>
+  </div>
+</div>
+
+<!-- S2: THE 4Cs OVERVIEW -->
+<div class="screen" id="s2">
+  <div class="s-inner narrow">
+    <div class="step-label">Chapter 2 of 8</div>
+    <h2 class="section-h">The <i>4Cs</i> — what every diamond is judged by</h2>
+    <p class="body-text">Every diamond in the world is graded against four criteria. Master these four things and you will never be confused in a jeweler again. We will walk through each one together.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:2.5rem 0">
+      <div style="background:var(--blush);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;cursor:pointer" onclick="goTo(3)">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--t);margin-bottom:0.5rem">2.1 &nbsp;&middot;&nbsp; Most important</div>
+        <div style="font-family:'Cormorant',serif;font-size:1.5rem;font-weight:400;color:var(--ink);margin-bottom:0.4rem">Cut</div>
+        <div style="font-size:15px;color:var(--mid);line-height:1.75">Sparkle. The single most important factor. Never compromise here.</div>
+      </div>
+      <div style="background:var(--blush);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;cursor:pointer" onclick="goTo(4)">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--t);margin-bottom:0.5rem">2.2 &nbsp;&middot;&nbsp; D to Z scale</div>
+        <div style="font-family:'Cormorant',serif;font-size:1.5rem;font-weight:400;color:var(--ink);margin-bottom:0.4rem">Color</div>
+        <div style="font-size:15px;color:var(--mid);line-height:1.75">How white or warm the stone appears. G to I is the sweet spot.</div>
+      </div>
+      <div style="background:var(--blush);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;cursor:pointer" onclick="goTo(5)">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--t);margin-bottom:0.5rem">2.3 &nbsp;&middot;&nbsp; FL to I3 scale</div>
+        <div style="font-family:'Cormorant',serif;font-size:1.5rem;font-weight:400;color:var(--ink);margin-bottom:0.4rem">Clarity</div>
+        <div style="font-size:15px;color:var(--mid);line-height:1.75">Internal flaws. VS1 or SI1 is all you need. Flawless is invisible overkill.</div>
+      </div>
+      <div style="background:var(--blush);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;cursor:pointer" onclick="goTo(6)">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--t);margin-bottom:0.5rem">2.4 &nbsp;&middot;&nbsp; Weight</div>
+        <div style="font-family:'Cormorant',serif;font-size:1.5rem;font-weight:400;color:var(--ink);margin-bottom:0.4rem">Carat</div>
+        <div style="font-size:15px;color:var(--mid);line-height:1.75">Size by weight. Price scales exponentially. Shape can make a stone look larger.</div>
+      </div>
+    </div>
+    <div class="nav-buttons">
+      <button class="btn-secondary" onclick="goTo(1)">&#8592; Back</button>
+      <button class="btn-primary" onclick="goTo(3)">Start with Cut &nbsp;&#8594;</button>
+    </div>
+  </div>
+</div>
+
+<!-- S2A: CUT -->
+<div class="screen" id="s2a">
+  <div class="s-inner narrow">
+    <div class="step-label">2.1 &nbsp;&middot;&nbsp; The 4Cs</div>
+    <h2 class="section-h"><i>Cut</i> — the only C that is entirely human</h2>
+    <p class="body-text">Cut does not refer to shape. It refers to the precision of the facets: their angles, proportions, symmetry, and finish. A perfectly cut diamond acts as a light engine. Light enters through the table, bounces through the pavilion facets, and fires back up through the crown in white brilliance, colored fire, and scintillating sparkle.</p>
+    <div style="border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin:2rem 0">
+      <img src="https://images.unsplash.com/photo-1583937443788-8c7f7ef38e00?w=800&q=85" alt="Excellent cut diamond ring showing full brilliance" style="width:100%;height:320px;object-fit:cover;display:block">
+      <div style="padding:1rem 1.25rem;background:var(--stone);font-size:13px;color:var(--mid);letter-spacing:0.06em">An Excellent cut round brilliant in white gold — light returns through every facet</div>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-cell"><strong>Excellent</strong>Maximum light performance. The only grade worth buying. Never settle below this.</div>
+      <div class="edu-cell"><strong>Very Good</strong>Minor trade-off in brilliance. Only consider if your budget is very tight.</div>
+      <div class="edu-cell"><strong>Good / Fair / Poor</strong>Noticeably less sparkle. A larger dull stone looks worse than a smaller brilliant one. Avoid.</div>
+      <div class="edu-cell"><strong>Fancy shapes</strong>GIA does not grade cut for oval, pear, or cushion. Look for Excellent Polish and Symmetry, and review light performance imagery from the retailer.</div>
+    </div>
+    <div class="tip"><div class="tip-icon"></div>A well-cut G color stone outsparkles a poorly cut D color stone every single time. Cut is the one C you cannot fix after purchase. Prioritize it above everything else.</div>
+    <div class="nav-buttons">
+      <button class="btn-secondary" onclick="goTo(2)">&#8592; Back to 4Cs</button>
+      <button class="btn-primary" onclick="goTo(4)">Next: 2.2 Color &nbsp;&#8594;</button>
+    </div>
+  </div>
+</div>
+
+<!-- S2B: COLOR -->
+<div class="screen" id="s2b">
+  <div class="s-inner narrow">
+    <div class="step-label">2.2 &nbsp;&middot;&nbsp; The 4Cs</div>
+    <h2 class="section-h"><i>Color</i> — white, warm, or somewhere between</h2>
+    <p class="body-text">GIA grades diamond color on a scale from D (completely colorless) to Z (visible yellow tint). The scale begins at D because earlier grading systems were so inconsistently applied that GIA chose to start fresh.</p>
+    <div style="border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin:2rem 0">
+      <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=800&q=85" alt="Diamond ring color comparison white gold" style="width:100%;height:280px;object-fit:cover;display:block">
+      <div style="padding:1rem 1.25rem;background:var(--stone);font-size:13px;color:var(--mid);letter-spacing:0.06em">G color diamond in platinum — visually identical to D at a fraction of the price</div>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-cell"><strong>D, E, F &nbsp;&middot;&nbsp; Colorless</strong>The rarest and most expensive tier. Indistinguishable from G to the naked eye once set. The price premium is enormous and largely invisible.</div>
+      <div class="edu-cell"><strong>G, H, I &nbsp;&middot;&nbsp; Near colorless</strong>The practical sweet spot. G reads as perfectly white in white gold or platinum. H and I show imperceptible warmth that disappears on the hand.</div>
+      <div class="edu-cell"><strong>J, K &nbsp;&middot;&nbsp; Faint yellow</strong>J can work in yellow or rose gold where the warm metal provides contrast. K and below will read as visibly warm to most buyers.</div>
+      <div class="edu-cell"><strong>Metal matters</strong>A G or H diamond in yellow gold reads white because the warm metal provides visual contrast. The same stone in platinum also reads white. Only a side-by-side with a D stone reveals any difference.</div>
+    </div>
+    <div class="tip"><div class="tip-icon"></div>Target G to I for a white metal setting. You will not see the difference from D once the ring is on the finger, but the price difference is significant.</div>
+    <div class="nav-buttons">
+      <button class="btn-secondary" onclick="goTo(3)">&#8592; Back: Cut</button>
+      <button class="btn-primary" onclick="goTo(5)">Next: 2.3 Clarity &nbsp;&#8594;</button>
+    </div>
+  </div>
+</div>
+
+<!-- S2C: CLARITY -->
+<div class="screen" id="s2c">
+  <div class="s-inner narrow">
+    <div class="step-label">2.3 &nbsp;&middot;&nbsp; The 4Cs</div>
+    <h2 class="section-h"><i>Clarity</i> — what lives inside the stone</h2>
+    <p class="body-text">Clarity refers to internal characteristics called inclusions, formed during the diamond's growth over millions of years under extreme heat and pressure. Every natural diamond has them. Lab diamonds form them too, just more quickly. GIA grades clarity under 10x magnification.</p>
+    <div style="border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin:2rem 0">
+      <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&q=85" alt="Diamond ring detail macro clarity" style="width:100%;height:280px;object-fit:cover;display:block">
+      <div style="padding:1rem 1.25rem;background:var(--stone);font-size:13px;color:var(--mid);letter-spacing:0.06em">VS1 clarity — no inclusions visible to the naked eye under any circumstances</div>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-cell"><strong>FL, IF &nbsp;&middot;&nbsp; Flawless</strong>No inclusions visible even under 10x magnification. Extraordinarily rare. A significant price premium for characteristics no one will ever see.</div>
+      <div class="edu-cell"><strong>VVS1, VVS2</strong>Extremely difficult to see under magnification. Eye-clean with large margin. Unnecessary for most buyers.</div>
+      <div class="edu-cell"><strong>VS1, VS2 &nbsp;&middot;&nbsp; Target range</strong>Minor inclusions visible under magnification only. Completely eye-clean. The ideal clarity range for value and confidence.</div>
+      <div class="edu-cell"><strong>SI1, SI2</strong>SI1 is typically eye-clean. SI2 requires stone-by-stone evaluation — always request HD imagery. I1 and below are visible to the naked eye. Avoid for center stones.</div>
+    </div>
+    <div class="tip"><div class="tip-icon"></div>Eye-clean is the standard, not a number on a certificate. VS1 or VS2 gives you comfort and value. Anything above VS1 is paying for what lives exclusively under a microscope.</div>
+    <div class="nav-buttons">
+      <button class="btn-secondary" onclick="goTo(4)">&#8592; Back: Color</button>
+      <button class="btn-primary" onclick="goTo(6)">Next: 2.4 Carat &nbsp;&#8594;</button>
+    </div>
+  </div>
+</div>
+
+<!-- S2D: CARAT -->
+<div class="screen" id="s2d">
+  <div class="s-inner narrow">
+    <div class="step-label">2.4 &nbsp;&middot;&nbsp; The 4Cs</div>
+    <h2 class="section-h"><i>Carat</i> — weight, size, and perception</h2>
+    <p class="body-text">Carat is a unit of weight. One carat equals 0.2 grams. It is the most emotionally loaded of the 4Cs, and the one most easily managed with the right shape choice. Price scales exponentially: a 2ct stone costs far more than two 1ct stones of identical quality.</p>
+    <div style="border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin:2rem 0">
+      <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=800&q=85" alt="Oval diamond ring on hand showing carat size" style="width:100%;height:280px;object-fit:cover;display:block">
+      <div style="padding:1rem 1.25rem;background:var(--stone);font-size:13px;color:var(--mid);letter-spacing:0.06em">2ct oval lab diamond — faces up larger than a 2ct round due to its elongated spread</div>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-cell"><strong>Shape changes everything</strong>An oval at 2ct has a greater face-up area than a round at 2ct. Marquise and pear are the most dramatic examples. Elongated shapes are the best tool for maximizing perceived size.</div>
+      <div class="edu-cell"><strong>Lab diamonds unlock carat</strong>In 2026, a 2ct lab diamond at G/VS1/Excellent retails for $2,000 to $4,000. The mined equivalent is $18,000 to $28,000. Lab diamonds make meaningful carat weight genuinely accessible.</div>
+      <div class="edu-cell"><strong>The magic numbers</strong>1ct, 1.5ct, and 2ct are psychological thresholds where prices jump. Buying just below — 0.9ct, 1.4ct, 1.9ct — can save meaningfully with no visible size difference.</div>
+      <div class="edu-cell"><strong>Petite hands read larger</strong>On a size 5 to 6.5 hand, a 2ct oval looks proportionally dramatic. The same stone on a larger hand reads differently. Match carat to hand size as much as to budget.</div>
+    </div>
+    <div class="tip"><div class="tip-icon"></div>Cut affects carat perception more than any other variable. A well-cut 1.5ct stone often outshines a poorly cut 2ct. Always secure cut first, then maximize carat within what remains.</div>
+    <div class="nav-buttons">
+      <button class="btn-secondary" onclick="goTo(5)">&#8592; Back: Clarity</button>
+      <button class="btn-primary" onclick="goTo(7)">Next: Lab vs mined &nbsp;&#8594;</button>
+    </div>
+  </div>
+</div>
+
+<!-- S3: LAB VS MINED -->
+<div class="screen" id="s3">
+  <div class="s-inner narrow">
+    <div class="step-label">Chapter 3 of 8 &nbsp;&middot;&nbsp; Lab vs Mined</div>
+    <h2 class="section-h">Lab or <i>mined?</i></h2>
+    <p class="body-text" style="margin-bottom:0.5rem">Lab-grown diamonds are chemically, optically, and physically identical to mined diamonds. A gemologist cannot distinguish them with the naked eye. Only specialized spectroscopic equipment can detect the difference.</p>
+
+    <div class="compare-row" style="margin:2rem 0">
+      <div class="compare-cell">
+        <div class="cc-era">Lab-grown, 2026</div>
+        <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=500&q=80" alt="Lab grown diamond ring sparkling">
+        <p>Grown in 6 to 10 weeks via CVD or HPHT. 60 to 80 percent cheaper than mined equivalents. GIA and IGI certified. Ethically traceable.</p>
+      </div>
+      <div class="compare-cell">
+        <div class="cc-era">Mined</div>
+        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500&q=80" alt="Mined diamond ring classic solitaire">
+        <p>Formed over billions of years under extreme pressure. Carries a geological origin narrative. Higher price reflects scarcity, not visual superiority.</p>
+      </div>
+    </div>
+
+    <div class="tip"><div class="tip-icon"></div>In 2026, a 2ct G/VS1/Excellent lab diamond retails for $2,000 to $4,000. The same grade in mined runs $18,000 to $28,000. There is no visual difference. The case for lab is, at this point, overwhelming unless origin matters deeply to you.</div>
+
+    <div class="nav-buttons">
+      <button class="btn-secondary" onclick="goTo(2)">&#8592; Back</button>
+      <button class="btn-primary" onclick="goTo(4)">Next: Beyond diamonds &nbsp;&#8594;</button>
+    </div>
+  </div>
+</div>
+
+<!-- S4: BEYOND DIAMONDS -->
+<div class="screen" id="s4">
+  <div class="s-inner narrow">
+    <div class="step-label">Chapter 4 of 8</div>
+    <h2 class="section-h">Does it have to be <i>a diamond?</i></h2>
+    <p class="body-text">No. The diamond engagement ring is a 20th-century convention. Colored gemstones have a far longer history in betrothal jewelry. The only practical criterion for daily wear is hardness, measured on the Mohs scale from 1 to 10.</p>
+
+    <div class="edu-grid" style="margin:2rem 0">
+      <div class="edu-cell"><strong>Sapphire &nbsp;9/10</strong>The most popular alternative in 2026. Extremely durable. Deep blue, pink, yellow, or white. Lab sapphires available at a fraction of natural cost. Royal association.</div>
+      <div class="edu-cell"><strong>Ruby &nbsp;9/10</strong>The same mineral as sapphire, colored by chromium. Bold and vivid. Deeply traditional in South Asian cultures. High-quality naturals are rarer than equivalent diamonds.</div>
+      <div class="edu-cell"><strong>Morganite &nbsp;7.5/10</strong>Peachy-pink beryl. Romantic and fashionable. Softer than sapphire: will accumulate surface scratches over years of daily wear. Beautiful for occasional wear.</div>
+      <div class="edu-cell"><strong>Moissanite &nbsp;9.25/10</strong>Lab-grown silicon carbide. Harder than sapphire. More refractive than diamond, producing a pronounced spectral sparkle. Dramatically cheaper. The best stretch for budget buyers.</div>
+    </div>
+
+    <div style="border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin:2rem 0">
+      <img src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=900&q=85" alt="Colored gemstone engagement rings" style="width:100%;height:260px;object-fit:cover;display:block">
+      <div style="padding:1rem 1.25rem;background:var(--stone);font-size:13px;color:var(--mid);letter-spacing:0.06em">Left to right: blue sapphire, teal sapphire, and morganite engagement rings</div>
+    </div>
+    <div class="tip"><div class="tip-icon"></div>For daily wear: diamond (lab) or sapphire are the two most durable choices. Moissanite is the best budget alternative if you want maximum visual impact per dollar.</div>
+
+    <div class="nav-buttons">
+      <button class="btn-secondary" onclick="goTo(3)">&#8592; Back</button>
+      <button class="btn-primary" onclick="goTo(5)">Next: Make your choices &nbsp;&#8594;</button>
+    </div>
+  </div>
+</div>
+
+<!-- S4B: PHASE DIVIDER -->
+<div class="screen" id="s4b">
+  <div style="min-height:calc(100vh - 64px);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:4rem 2.5rem;background:var(--slate);position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(10,186,181,0.06),transparent 70%)"></div>
+    <div style="position:relative;z-index:1;max-width:600px">
+      <div style="display:flex;align-items:center;justify-content:center;gap:1.25rem;margin-bottom:2.5rem">
+        <div style="flex:1;height:1px;background:rgba(178,228,226,0.2)"></div>
+        <div style="width:8px;height:8px;background:var(--t);transform:rotate(45deg)"></div>
+        <div style="flex:1;height:1px;background:rgba(178,228,226,0.2)"></div>
+      </div>
+      <div style="font-size:10px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:var(--tm);margin-bottom:1.5rem">Part one complete</div>
+      <h2 style="font-family:'Cormorant',serif;font-size:clamp(2.4rem,5vw,4rem);font-weight:300;color:#F9F6F0;line-height:1.1;margin-bottom:1.5rem">You now know<br>everything that<br><i style="color:var(--t)">matters.</i></h2>
+      <p style="font-size:17px;color:rgba(249,246,240,0.65);line-height:1.9;margin-bottom:3rem">History. The 4Cs. Lab versus mined. Every alternative. You are no longer walking into a jeweler blind. Now it is time to make it personal.</p>
+      <div style="display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap">
+        <div style="background:rgba(249,246,240,0.06);border:1px solid rgba(249,246,240,0.12);border-radius:2px;padding:1rem 1.5rem;text-align:center;min-width:120px">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:2rem;color:var(--t);line-height:1">01</div>
+          <div style="font-size:11px;color:rgba(249,246,240,0.5);margin-top:4px;letter-spacing:0.08em">History</div>
+        </div>
+        <div style="background:rgba(249,246,240,0.06);border:1px solid rgba(249,246,240,0.12);border-radius:2px;padding:1rem 1.5rem;text-align:center;min-width:120px">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:2rem;color:var(--t);line-height:1">02</div>
+          <div style="font-size:11px;color:rgba(249,246,240,0.5);margin-top:4px;letter-spacing:0.08em">The 4Cs</div>
+        </div>
+        <div style="background:rgba(249,246,240,0.06);border:1px solid rgba(249,246,240,0.12);border-radius:2px;padding:1rem 1.5rem;text-align:center;min-width:120px">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:2rem;color:var(--t);line-height:1">03</div>
+          <div style="font-size:11px;color:rgba(249,246,240,0.5);margin-top:4px;letter-spacing:0.08em">Lab vs mined</div>
+        </div>
+        <div style="background:rgba(249,246,240,0.06);border:1px solid rgba(249,246,240,0.12);border-radius:2px;padding:1rem 1.5rem;text-align:center;min-width:120px">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:2rem;color:var(--t);line-height:1">04</div>
+          <div style="font-size:11px;color:rgba(249,246,240,0.5);margin-top:4px;letter-spacing:0.08em">Gemstones</div>
+        </div>
+      </div>
+      <div style="margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid rgba(249,246,240,0.1)">
+        <div style="font-size:10px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:var(--tm);margin-bottom:1.25rem">Part two: your preferences</div>
+        <p style="font-size:15px;color:rgba(249,246,240,0.5);margin-bottom:2rem;line-height:1.75">Four choices. Stone, shape, setting, budget. They take less than five minutes and produce a specification you can walk into any jeweler with.</p>
+        <button class="btn-primary" onclick="goTo(10)" style="font-size:15px;padding:1.2rem 2.75rem">Make my choices &nbsp;&#8594;</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S5: PICK STONE -->
+<div class="screen" id="s5">
+  <div class="s-inner">
+    <div class="choice-header">
+      <div class="step-label">Your preferences &nbsp;&middot;&nbsp; Step 1 of 4</div>
+      <h2 class="section-h">Choose your <i>stone</i></h2>
+      <p style="color:var(--mid);font-size:14px;max-width:480px;margin:0 auto">Select the one that feels right. You can always change your mind.</p>
+    </div>
+
+    <div class="choice-grid cols-2" id="stoneGrid">
+      <div class="choice-card" data-choice="stone" data-val="lab" onclick="pick(this)">
+        <div class="card-tag">Recommended</div>
+        <div class="card-title">Lab-grown diamond</div>
+        <div class="card-sub">Chemically identical to mined. 60 to 80 percent cheaper. GIA or IGI certified. The ethical, high-value choice of 2026.</div>
+        <div class="card-badge">Best value</div>
+      </div>
+      <div class="choice-card" data-choice="stone" data-val="mined" onclick="pick(this)">
+        <div class="card-tag">Classic</div>
+        <div class="card-title">Mined diamond</div>
+        <div class="card-sub">Formed over billions of years. Carries the geological origin narrative. Higher price, identical appearance.</div>
+      </div>
+      <div class="choice-card" data-choice="stone" data-val="sapphire" onclick="pick(this)">
+        <div class="card-tag">Alternative</div>
+        <div class="card-title">Sapphire</div>
+        <div class="card-sub">9/10 hardness. Deeply durable for daily wear. Lab sapphires available. Stunning in blue, pink, or teal. Royal heritage.</div>
+      </div>
+      <div class="choice-card" data-choice="stone" data-val="moissanite" onclick="pick(this)">
+        <div class="card-tag">Budget stretch</div>
+        <div class="card-title">Moissanite</div>
+        <div class="card-sub">9.25/10 hardness. More refractive than diamond. Dramatically cheaper. Lab-grown, ethical. A serious modern option.</div>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="btn-secondary" onclick="goTo(10)">&#8592; Back</button>
+      <button class="btn-primary" onclick="goTo(11)">Next: Shape &nbsp;&#8594;</button>
+    </div>
+  </div>
+</div>
+
+<!-- S6: PICK SHAPE -->
+<div class="screen" id="s6">
+  <div class="s-inner">
+    <div class="choice-header">
+      <div class="step-label">Your preferences &nbsp;&middot;&nbsp; Step 2 of 4</div>
+      <h2 class="section-h">Choose your <i>shape</i></h2>
+      <p style="color:var(--mid);font-size:14px;max-width:480px;margin:0 auto">Elongated shapes read larger per carat and naturally lengthen the finger. For petite hands (size 5 to 7), oval and cushion are especially flattering.</p>
+    </div>
+
+    <div class="choice-grid cols-4" id="shapeGrid">
+      <div class="shape-card" data-choice="shape" data-val="oval" onclick="pick(this)">
+        <svg width="48" height="48" viewBox="0 0 48 48"><ellipse cx="24" cy="24" rx="11" ry="17" fill="none" stroke="#0ABAB5" stroke-width="1.5"/></svg>
+        <span class="shape-name">Oval</span>
+        <span class="shape-rec">Best for small hands</span>
+        <span class="shape-note">Largest face-up, most flattering</span>
+      </div>
+      <div class="shape-card" data-choice="shape" data-val="round" onclick="pick(this)">
+        <svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16" fill="none" stroke="#9A938C" stroke-width="1.5"/><circle cx="24" cy="24" r="8" fill="none" stroke="#9A938C" stroke-width="0.5" stroke-dasharray="2 2"/></svg>
+        <span class="shape-name">Round</span>
+        <span class="shape-note">Maximum brilliance, timeless</span>
+      </div>
+      <div class="shape-card" data-choice="shape" data-val="cushion" onclick="pick(this)">
+        <svg width="48" height="48" viewBox="0 0 48 48"><rect x="8" y="8" width="32" height="32" rx="8" fill="none" stroke="#0ABAB5" stroke-width="1.5"/></svg>
+        <span class="shape-name">Cushion</span>
+        <span class="shape-rec">Great for petite hands</span>
+        <span class="shape-note">Soft, romantic, vintage feel</span>
+      </div>
+      <div class="shape-card" data-choice="shape" data-val="emerald" onclick="pick(this)">
+        <svg width="48" height="48" viewBox="0 0 48 48"><rect x="12" y="5" width="24" height="38" rx="3" fill="none" stroke="#9A938C" stroke-width="1.5"/></svg>
+        <span class="shape-name">Emerald cut</span>
+        <span class="shape-note">Art deco, architectural elegance</span>
+      </div>
+      <div class="shape-card" data-choice="shape" data-val="pear" onclick="pick(this)">
+        <svg width="48" height="48" viewBox="0 0 48 48"><path d="M24 4 C33 4 41 12 41 21 C41 32 24 46 24 46 C24 46 7 32 7 21 C7 12 15 4 24 4Z" fill="none" stroke="#9A938C" stroke-width="1.5"/></svg>
+        <span class="shape-name">Pear</span>
+        <span class="shape-note">Feminine, elongates the finger</span>
+      </div>
+      <div class="shape-card" data-choice="shape" data-val="marquise" onclick="pick(this)">
+        <svg width="48" height="48" viewBox="0 0 48 48"><path d="M24 4 L44 24 L24 44 L4 24Z" fill="none" stroke="#9A938C" stroke-width="1.5"/></svg>
+        <span class="shape-name">Marquise</span>
+        <span class="shape-note">Most elongating of all shapes</span>
+      </div>
+      <div class="shape-card" data-choice="shape" data-val="princess" onclick="pick(this)">
+        <svg width="48" height="48" viewBox="0 0 48 48"><rect x="8" y="8" width="32" height="32" rx="1" fill="none" stroke="#9A938C" stroke-width="1.5"/></svg>
+        <span class="shape-name">Princess</span>
+        <span class="shape-note">Modern, geometric, bold</span>
+      </div>
+      <div class="shape-card" data-choice="shape" data-val="radiant" onclick="pick(this)">
+        <svg width="48" height="48" viewBox="0 0 48 48"><polygon points="24,4 36,10 44,24 36,38 24,44 12,38 4,24 12,10" fill="none" stroke="#9A938C" stroke-width="1.5"/></svg>
+        <span class="shape-name">Radiant</span>
+        <span class="shape-note">Brilliant hybrid, versatile</span>
+      </div>
+    </div>
+
+    <div style="border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin:2rem 0">
+      <img src="https://images.unsplash.com/photo-1522255272218-7ac5249be344?w=900&q=85" alt="Oval diamond ring on petite hand" style="width:100%;height:280px;object-fit:cover;display:block">
+      <div style="padding:0.9rem 1.25rem;background:var(--stone);font-size:13px;color:var(--mid);letter-spacing:0.06em">Oval cut on a slim pavé band — the most flattering shape for petite hands</div>
+    </div>
+    <div class="tip"><div class="tip-icon"></div>For a size 6 to 6.5 petite hand: oval is the strongest recommendation. It maximizes visual size per carat, elongates the finger, and is the most sought-after shape of 2026. Elongated cushion is a close second with a softer, more vintage feel.</div>
+    <div class="nav-buttons">
+      <button class="btn-secondary" onclick="goTo(11)">&#8592; Back</button>
+      <button class="btn-primary" onclick="goTo(12)">Next: Setting &nbsp;&#8594;</button>
+    </div>
+  </div>
+</div>
+
+<!-- S7: PICK SETTING + METAL -->
+<div class="screen" id="s7">
+  <div class="s-inner">
+    <div class="choice-header">
+      <div class="step-label">Your preferences &nbsp;&middot;&nbsp; Step 3 of 4</div>
+      <h2 class="section-h">Setting &amp; <i>metal</i></h2>
+    </div>
+
+    <p style="font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--t);margin-bottom:1rem">Setting style</p>
+    <div class="choice-grid cols-3" id="settingGrid">
+      <div class="choice-card" data-choice="setting" data-val="solitaire" onclick="pick(this)">
+        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400&q=80" alt="Solitaire ring setting" class="card-img">
+        <div class="card-title">Solitaire</div>
+        <div class="card-sub">One stone, clean band. The stone speaks alone. Timeless and always correct.</div>
+        <div class="card-badge">Most popular</div>
+      </div>
+      <div class="choice-card" data-choice="setting" data-val="pave" onclick="pick(this)">
+        <img src="https://images.unsplash.com/photo-1583937443788-8c7f7ef38e00?w=400&q=80" alt="Pavé band diamond ring" class="card-img">
+        <div class="card-title">Pavé / micropavé</div>
+        <div class="card-sub">Tiny diamonds set along the band. Adds continuous sparkle without changing the center stone.</div>
+      </div>
+      <div class="choice-card" data-choice="setting" data-val="halo" onclick="pick(this)">
+        <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&q=80" alt="Halo diamond engagement ring" class="card-img">
+        <div class="card-title">Halo</div>
+        <div class="card-sub">Small diamonds surround the center stone. Makes it appear significantly larger. Vintage glamour.</div>
+      </div>
+      <div class="choice-card" data-choice="setting" data-val="three-stone" onclick="pick(this)">
+        <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=400&q=80" alt="Three stone diamond ring" class="card-img">
+        <div class="card-title">Three-stone</div>
+        <div class="card-sub">Center flanked by two side stones. Represents past, present, and future. Meaningful and balanced.</div>
+      </div>
+      <div class="choice-card" data-choice="setting" data-val="bezel" onclick="pick(this)">
+        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&q=80" alt="Bezel set diamond ring" class="card-img">
+        <div class="card-title">Bezel</div>
+        <div class="card-sub">Metal rim wraps the stone edge. Sleek, modern, very secure. Great for active lifestyles.</div>
+      </div>
+      <div class="choice-card" data-choice="setting" data-val="east-west" onclick="pick(this)">
+        <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&q=80" alt="East west contemporary ring setting" class="card-img">
+        <div class="card-title">East-West</div>
+        <div class="card-sub">Stone set horizontally. Contemporary and architectural. Striking with oval or marquise.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:2.5rem">
+      <p style="font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--t);margin-bottom:1rem">Metal</p>
+      <div class="choice-grid cols-4" id="metalGrid">
+        <div class="choice-card" data-choice="metal" data-val="platinum" onclick="pick(this)">
+          <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=400&q=80" alt="Platinum diamond ring" class="card-img" style="height:130px">
+          <div class="card-title">Platinum</div>
+          <div class="card-sub">Most durable. Naturally white forever. Hypoallergenic. The prestige choice.</div>
+        </div>
+        <div class="choice-card" data-choice="metal" data-val="white-gold" onclick="pick(this)">
+          <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=400&q=80" alt="White gold diamond ring" class="card-img" style="height:130px">
+          <div class="card-title">White gold</div>
+          <div class="card-sub">Looks like platinum at lower cost. Needs rhodium replating every few years.</div>
+          <div class="card-badge">Most common</div>
+        </div>
+        <div class="choice-card" data-choice="metal" data-val="yellow-gold" onclick="pick(this)">
+          <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&q=80" alt="Yellow gold diamond ring" class="card-img" style="height:130px">
+          <div class="card-title">Yellow gold</div>
+          <div class="card-sub">Classic and warm. Strong moment in 2026. 14k durable, 18k richer in color.</div>
+        </div>
+        <div class="choice-card" data-choice="metal" data-val="rose-gold" onclick="pick(this)">
+          <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=400&q=80" alt="Rose gold diamond ring" class="card-img" style="height:130px">
+          <div class="card-title">Rose gold</div>
+          <div class="card-sub">Warm blush pink. Very flattering on most skin tones. Romantic, no replating needed.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="btn-secondary" onclick="goTo(12)">&#8592; Back</button>
+      <button class="btn-primary" onclick="goTo(13)">Next: Budget &nbsp;&#8594;</button>
+    </div>
+  </div>
+</div>
+
+<!-- S8: BUDGET -->
+<div class="screen" id="s8">
+  <div class="s-inner narrow">
+    <div class="choice-header">
+      <div class="step-label">Your preferences &nbsp;&middot;&nbsp; Step 4 of 4</div>
+      <h2 class="section-h">What is your <i>budget?</i></h2>
+      <p style="color:var(--mid);font-size:14px;max-width:440px;margin:0 auto">Total budget for stone and setting combined. Prices are 2026 retail.</p>
+    </div>
+
+    <div class="budget-wrap">
+      <div class="budget-display" id="budgetDisplay">$3,000</div>
+      <div class="budget-sub" id="budgetSub">Stone + setting combined</div>
+      <input type="range" min="500" max="20000" step="500" value="3000" id="budgetSlider" oninput="updateBudget(this.value)">
+      <div class="budget-ticks">
+        <span>$500</span><span>$5k</span><span>$10k</span><span>$15k</span><span>$20k</span>
+      </div>
+      <div class="budget-insight" id="budgetInsight"></div>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="btn-secondary" onclick="goTo(13)">&#8592; Back</button>
+      <button class="btn-primary" onclick="buildResult();goTo(14)">See my ring &nbsp;&#8658;</button>
+    </div>
+  </div>
+</div>
+
+<!-- S9: RESULT -->
+<div class="screen" id="s9">
+  <div style="max-width:680px;margin:0 auto;padding:5rem 2.5rem 2rem">
+
+    <!-- Header -->
+    <div class="eyebrow fade-in">Your ring specification</div>
+    <h2 class="section-h fade-in" style="margin-bottom:0.5rem">Here is your <i>ring.</i></h2>
+    <p style="color:var(--mid);font-size:16px;margin-bottom:3rem" class="fade-in">Built from your preferences. Take this into any jeweler and you will know exactly what to ask for.</p>
+
+    <!-- Spec card -->
+    <div id="specCard" style="border:1.5px solid var(--border);border-radius:4px;overflow:hidden;margin-bottom:2rem">
+      <div style="background:var(--slate);padding:1.25rem 1.75rem;display:flex;align-items:center;justify-content:space-between">
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--tm)">The Forever Guide &nbsp;&middot;&nbsp; 2026</div>
+        <div style="font-size:10px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:rgba(178,228,226,0.6)">Your specification</div>
+      </div>
+      <div id="specRows" style="background:var(--ivory)"></div>
+    </div>
+
+    <!-- Why section -->
+    <div style="border-left:3px solid var(--t);padding:1.25rem 1.5rem;background:var(--tp);border-radius:0 4px 4px 0;margin-bottom:2.5rem">
+      <div style="font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--t);margin-bottom:0.6rem">Why this works for you</div>
+      <p id="resultWhy" style="font-size:15px;color:var(--mid);line-height:1.85"></p>
+    </div>
+
+    <!-- Where to buy -->
+    <div style="margin-bottom:2.5rem">
+      <div style="font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink);margin-bottom:1rem;padding-bottom:0.75rem;border-bottom:1px solid var(--border)">Where to buy</div>
+      <div id="resultRecs"></div>
+    </div>
+
+    <!-- Certification reminder -->
+    <div style="background:var(--champagne);border:1px solid var(--border);border-radius:4px;padding:1.5rem;margin-bottom:2.5rem">
+      <div style="font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink);margin-bottom:0.75rem">Always require certification</div>
+      <p style="font-size:15px;color:var(--mid);line-height:1.8">Ask for the GIA or IGI report number before purchasing. Verify it at <strong style="color:var(--ink)">GIA.edu</strong> or <strong style="color:var(--ink)">IGI.com</strong>. Takes two minutes. If a retailer cannot provide one, walk away.</p>
+    </div>
+
+    <!-- Action buttons -->
+    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:3rem">
+      <button class="btn-primary" onclick="copySpec()" id="copyBtn" style="width:100%;justify-content:center;font-size:15px;padding:1.1rem 2rem">
+        Copy as text &nbsp;&#10697;
+      </button>
+      <button class="btn-primary" onclick="printSpec()" style="width:100%;justify-content:center;font-size:15px;padding:1.1rem 2rem;background:var(--slate)">
+        Download as PDF &nbsp;&#8659;
+      </button>
+      <button class="btn-secondary" onclick="goTo(0)" style="width:100%;justify-content:center">
+        &#8592; Start over
+      </button>
+    </div>
+
+    <!-- Disclaimer -->
+    <div style="border-top:1px solid var(--border);padding-top:1.5rem;margin-bottom:3rem">
+      <p style="font-size:12px;color:var(--light);line-height:1.8;text-align:center"><strong style="color:var(--mid);font-weight:500">Disclaimer</strong> &nbsp;&middot;&nbsp; All prices and market data are current as of 2026. Lab diamond prices fluctuate. Always compare at least two retailers and verify any certificate number independently at GIA.edu or IGI.com. For educational purposes only.</p>
+    </div>
+
+    <footer style="padding:2rem 0;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between">
+      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--t);font-size:1rem">The Forever Guide</div>
+      <div style="font-size:11px;color:var(--light);text-align:right;line-height:1.7">Prices current as of 2026.<br>For personal use and sharing.</div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+// STATE
+const state = {stone:null,shape:null,setting:null,metal:null,budget:3000};
+const SCREENS = ['s0','s1','s2','s2a','s2b','s2c','s2d','s3','s4','s4b','s5','s6','s7','s8','s9'];
+const TOTAL = SCREENS.length;
+let current = 0;
+
+// NAV DOTS
+const navSteps = document.getElementById('navSteps');
+SCREENS.forEach((id,i)=>{
+  if(i===0||i===SCREENS.length-1) return;
+  const dot = document.createElement('div');
+  dot.className = 'nav-step';
+  if(i>1){const line=document.createElement('div');line.className='ns-line';line.id=`nl-${i}`;dot.appendChild(line);}
+  const d=document.createElement('div');
+  d.className='ns-dot';d.id=`nd-${i}`;
+  d.onclick=()=>goTo(i);
+  dot.appendChild(d);
+  navSteps.appendChild(dot);
+});
+
+function goTo(n){
+  document.getElementById(SCREENS[current]).classList.remove('active');
+  current=n;
+  const el=document.getElementById(SCREENS[current]);
+  el.classList.add('active');
+  el.querySelectorAll('.fade-in').forEach(e=>{e.style.animation='none';requestAnimationFrame(()=>{e.style.animation='';})});
+  window.scrollTo({top:0,behavior:'smooth'});
+  updateNav();
+}
+
+function updateNav(){
+  const pct = (current/(TOTAL-1))*100;
+  document.getElementById('progressFill').style.width=pct+'%';
+  document.querySelectorAll('.ns-dot').forEach((d,i)=>{
+    const si=i+1;
+    d.classList.remove('active','done');
+    if(si===current) d.classList.add('active');
+    else if(si<current) d.classList.add('done');
+  });
+  document.querySelectorAll('.ns-line').forEach((l,i)=>{
+    const si=i+2;
+    l.classList.toggle('done',si<=current);
+  });
+}
+
+// PICK
+function pick(el){
+  const choice=el.dataset.choice;
+  const val=el.dataset.val;
+  state[choice]=val;
+  el.closest('.choice-grid')||el.parentElement;
+  document.querySelectorAll(`[data-choice="${choice}"]`).forEach(c=>c.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+// BUDGET
+function updateBudget(val){
+  const v=parseInt(val);
+  state.budget=v;
+  document.getElementById('budgetDisplay').textContent='$'+v.toLocaleString();
+  const ins=document.getElementById('budgetInsight');
+  const stone=state.stone||'lab';
+  if(v<1500){
+    ins.innerHTML=`<strong>Moissanite or lab diamond under 1ct</strong> are your best options at this range. A well-cut moissanite oval on a thin white gold band looks stunning and wears beautifully.`;
+  } else if(v<3000){
+    ins.innerHTML=`<strong>1 to 1.5ct lab diamond, G/VS2/Excellent.</strong> This is a strong budget. You can get an oval or cushion lab diamond with a slim pavé setting in white gold or platinum.`;
+  } else if(v<6000){
+    ins.innerHTML=`<strong>2ct lab diamond, G/VS1/Excellent</strong> is very achievable here. This is the sweet spot of the 2026 lab diamond market. Stone $2,000 to $3,500 + setting $500 to $1,500.`;
+  } else if(v<12000){
+    ins.innerHTML=`<strong>2.5 to 3ct lab diamond</strong> or a <strong>1.5ct mined diamond</strong> are both possible. You have meaningful room on stone quality and setting complexity.`;
+  } else {
+    ins.innerHTML=`<strong>3ct+ lab diamond, D/VVS1</strong> or a <strong>2ct mined diamond, G/VS1.</strong> At this budget, you can prioritize every C without compromise. Consider a bespoke setting from a New York jeweler.`;
+  }
+}
+updateBudget(3000);
+
+// COPY AND PRINT
+function copySpec(){
+  const txt = document.getElementById('copyText').value;
+  if(!txt) return;
+  navigator.clipboard.writeText(txt).then(()=>{
+    const btn = document.getElementById('copyBtn');
+    btn.textContent = 'Copied to clipboard ✓';
+    btn.style.background = 'var(--td)';
+    setTimeout(()=>{ btn.innerHTML = 'Copy as text &nbsp;&#10697;'; btn.style.background = 'var(--t)'; }, 2500);
+  }).catch(()=>{
+    // fallback
+    const ta = document.getElementById('copyText');
+    ta.select();
+    document.execCommand('copy');
+    const btn = document.getElementById('copyBtn');
+    btn.textContent = 'Copied ✓';
+    setTimeout(()=>{ btn.innerHTML = 'Copy as text &nbsp;&#10697;'; }, 2500);
+  });
+}
+
+function printSpec(){
+  window.print();
+}
+
+// RESULT
+const IMAGES = {
+  oval:    "https://images.unsplash.com/photo-1522255272218-7ac5249be344?w=700&q=80",
+  round:   "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=700&q=80",
+  cushion: "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=700&q=80",
+  emerald: "https://images.unsplash.com/photo-1583937443788-8c7f7ef38e00?w=700&q=80",
+  pear:    "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=700&q=80",
+  marquise:"https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=700&q=80",
+  princess:"https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=700&q=80",
+  radiant: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=700&q=80",
+  default: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=700&q=80",
+};
+
+const STONE_LABELS={lab:"Lab-grown diamond",mined:"Mined diamond",sapphire:"Sapphire",moissanite:"Moissanite"};
+const SHAPE_LABELS={oval:"Oval",round:"Round brilliant",cushion:"Cushion",emerald:"Emerald cut",pear:"Pear",marquise:"Marquise",princess:"Princess",radiant:"Radiant"};
+const SETTING_LABELS={"solitaire":"Solitaire","pave":"Pavé band","halo":"Halo","three-stone":"Three-stone","bezel":"Bezel","east-west":"East-West"};
+const METAL_LABELS={"platinum":"Platinum","white-gold":"White gold (14k or 18k)","yellow-gold":"Yellow gold (18k)","rose-gold":"Rose gold (14k or 18k)"};
+
+function buildResult(){
+  const s=state;
+  // spec rows
+  const specs=[
+    {label:"Stone", val: STONE_LABELS[s.stone]||"Lab-grown diamond (recommended)"},
+    {label:"Shape", val: SHAPE_LABELS[s.shape]||"Oval (recommended for small hands)"},
+    {label:"Setting", val: SETTING_LABELS[s.setting]||"Solitaire or pavé (recommended)"},
+    {label:"Metal", val: METAL_LABELS[s.metal]||"White gold or platinum"},
+    {label:"Budget", val: "$"+s.budget.toLocaleString()},
+    {label:"Cut", val: "Excellent — non-negotiable"},
+    {label:"Color", val: "G to I (near-colorless, best value)"},
+    {label:"Clarity", val: "VS1, VS2, or SI1 (eye-clean)"},
+    {label:"Certificate", val: s.stone==='lab'?"IGI or GIA":"GIA"},
+  ];
+  const specHTML = specs.map(r=>`
+    <div style="display:flex;align-items:baseline;gap:1.25rem;padding:0.9rem 1.75rem;border-bottom:1px solid var(--rule)">
+      <span style="font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--light);min-width:90px;flex-shrink:0">${r.label}</span>
+      <span style="font-size:16px;color:var(--ink);font-family:'Cormorant',serif;font-weight:400">${r.val}</span>
+    </div>
+  `).join('') + `<div style="padding:0.9rem 1.75rem;font-size:12px;color:var(--light);font-style:italic">The Forever Guide &nbsp;&middot;&nbsp; 2026 Edition</div>`;
+  document.getElementById('specRows').innerHTML = specHTML;
+
+  // Plain text version for copy
+  const copyLines = [
+    'MY RING SPECIFICATION — THE FOREVER GUIDE 2026',
+    '================================================',
+    ...specs.map(r => r.label.toUpperCase().padEnd(14) + r.val),
+    '',
+    'Cut: Always Excellent. Color: G-I. Clarity: VS1, VS2, or SI1 (eye-clean).',
+    'Certificate: GIA or IGI. Verify at GIA.edu or IGI.com before purchasing.',
+    '',
+    'Prices and data current as of 2026. The Forever Guide — for educational use only.',
+  ].join('\n');
+
+  // Hidden textarea for copy fallback
+  let ta = document.getElementById('copyText');
+  if(!ta){ ta = document.createElement('textarea'); ta.id='copyText'; ta.style.cssText='position:absolute;left:-9999px;top:0;opacity:0'; document.body.appendChild(ta); }
+  ta.value = copyLines;
+
+  // why text
+  const stone = STONE_LABELS[s.stone]||"lab-grown diamond";
+  const shape = SHAPE_LABELS[s.shape]||"oval";
+  const setting = SETTING_LABELS[s.setting]||"solitaire";
+  const metal = METAL_LABELS[s.metal]||"white gold";
+  document.getElementById('resultWhy').innerHTML = `
+    You chose a <strong>${stone}</strong> in a <strong>${shape}</strong> shape, set in a <strong>${setting}</strong> setting in <strong>${metal}</strong>. 
+    ${s.stone==='lab'?'Lab diamonds offer the same visual result as mined at 60 to 80 percent less cost in 2026. Your budget goes significantly further.':''}
+    ${['oval','pear','marquise','cushion'].includes(s.shape)?'Elongated shapes like '+shape+' face up larger per carat than round stones and create the illusion of length on the finger. On a petite hand, this is particularly flattering.':'Round brilliant is the most popular shape globally for good reason: its 58 facets are engineered to maximize light return and sparkle.'}
+    ${s.setting==='pave'?'A pavé band adds continuous sparkle to the shank, complementing the center stone without competing with it.':s.setting==='halo'?'A halo setting will make your center stone appear meaningfully larger, adding the visual equivalent of 0.3 to 0.5ct.':''}
+    At a budget of $${s.budget.toLocaleString()}, ${s.budget>=3000?'you are well positioned to achieve a 2ct lab diamond at G/VS1/Excellent with a quality setting.':'focus your spending on cut first, then carat, then color.'}
+  `;
+
+  // retailer recs
+  const recs=[
+    {label:"Best online",name:"James Allen",note:"360° HD video of every stone. Largest lab diamond inventory. Price-match guarantee. Ships to NYC."},
+    {label:"Best in NYC",name:"47th Street Diamond District",note:"Between 5th and 6th Ave, Midtown. Hundreds of vendors, wholesale pricing, negotiate in person."},
+    {label:"Ethical focus",name:"Brilliant Earth, SoHo",note:"Strong lab diamond selection, beautiful settings, knowledgeable staff. Low-pressure showroom."},
+  ];
+  if(s.stone==='moissanite') recs[0]={label:"Best for moissanite",name:"Charles and Colvard",note:"The original moissanite brand. Excellent quality, strong selection of shapes and settings."};
+  document.getElementById('resultRecs').innerHTML=recs.map(r=>`
+    <div style="display:flex;gap:1.25rem;padding:0.9rem 0;border-bottom:1px solid var(--rule);align-items:flex-start">
+      <div style="font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--t);min-width:110px;flex-shrink:0;padding-top:3px">${r.label}</div>
+      <div>
+        <div style="font-family:'Cormorant',serif;font-size:1.05rem;font-weight:400;color:var(--ink);margin-bottom:2px">${r.name}</div>
+        <div style="font-size:14px;color:var(--mid);line-height:1.7">${r.note}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+updateNav();
+</script>
+</body>
+</html>
